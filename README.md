@@ -56,6 +56,25 @@ Key folders
   - `Footer.tsx`
 - `public/` — Static assets (images, icons)
 
+## Known trade-offs and Future improvements
+
+### Known trade-offs
+
+- **Cutting-edge versions:** This project references the latest major versions (Next.js 16, React 19, Tailwind v4). Using the newest releases gives access to modern features and performance improvements but may introduce instability or API changes compared to more widely used stable releases.
+- **Client-side explorer:** The `/explorer` route fetches data client-side from a public API for simplicity. This keeps the demo lightweight but means initial load relies on client fetches rather than server-rendered content.
+- **Simplified assets & artwork:** The UI uses placeholder artwork (emoji/gradient or simple SVGs) to match the design quickly. Replacing these with production-grade assets will increase bundle size unless optimized properly.
+
+### Future improvements
+
+- Add robust error handling, retry/backoff logic, and user-friendly messaging for network failures.
+- Implement caching and state management (e.g., React Query, SWR, or Zustand) for the explorer data to reduce repeated network calls and improve UX.
+- Add unit and integration tests (Jest + React Testing Library) and end-to-end tests (Playwright or Cypress).
+- Improve accessibility (WCAG) and keyboard navigation across interactive elements (buttons, links, details/summary blocks).
+- Replace placeholder artwork with optimized SVGs in `public/` and add subtle animations for a polished appearance.
+- Add CI/CD pipeline that runs tests and deploys to Vercel or another hosting provider.
+- Add i18n support for multi-language content.
+- Introduce backend API routes or a simple server layer if you need to proxy or augment third-party API data.
+
 ## Explorer page
 
 - Route: `/explorer`
