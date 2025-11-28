@@ -64,7 +64,7 @@ npm start
   - `explorer/page.tsx` - Explorer interface
   - `layout.tsx` - Root layout
 - `public/` - Static assets
-- `components/` - Reusable React components (if any)
+
 
 ## Known Trade-offs and Future Improvements
 
@@ -84,7 +84,7 @@ npm start
 
 ## Live URL
 
-The application is deployed at: [https://plutus-labs-eight.vercel.app](https://plutus-labs-eight.vercel.app) (placeholder - update with actual deployment URL)
+The application is deployed at: [https://plutus-labs-eight.vercel.app](https://plutus-labs-eight.vercel.app)
 
 
 ## License
