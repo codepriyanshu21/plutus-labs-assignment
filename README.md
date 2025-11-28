@@ -84,7 +84,7 @@ npm start
 
 ## Live URL
 
-The application is deployed at: [https://plutus-labs.vercel.app](https://plutus-labs.vercel.app) (placeholder - update with actual deployment URL)
+The application is deployed at: [https://plutus-labs-eight.vercel.app](https://plutus-labs.vercel.app) (placeholder - update with actual deployment URL)
 
 
 ## License
