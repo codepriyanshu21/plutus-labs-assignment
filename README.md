@@ -1,6 +1,6 @@
 # Plutus Labs
 
-A modern web application built with Next.js, featuring an explorer interface for blockchain or financial data visualization.
+A Next.js project that implements a marketing-style homepage and an `explorer` page which fetches data from a public API. The repository is scaffolded to be easy to run and extend.
 
 ## Tech Stack and Decisions
 
@@ -11,76 +11,66 @@ A modern web application built with Next.js, featuring an explorer interface for
 - **Linting**: ESLint with Next.js config - Ensures code quality and consistency.
 - **Build Tool**: Next.js built-in bundler - Optimized for production with automatic code splitting and image optimization.
 
-## Getting Started
 
-### Prerequisites
+## Quick Start (Windows PowerShell)
 
-- Node.js (version 18 or higher)
-- npm, yarn, pnpm, or bun
+Prerequisites:
+- Node.js 18+ and a package manager (`npm`, `yarn`, or `pnpm`).
 
-### Installation
+Install and run locally:
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd plutus-labs
-```
-
-2. Install dependencies:
-```bash
+```powershell
 npm install
-```
-
-### Running Locally
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+Open http://localhost:3000 and http://localhost:3000/explorer
 
-The app will auto-reload as you make changes to the code.
+## What’s included
 
-### Building for Production
+- Next.js App Router (`app/`)
+- Global styles in `app/globals.css`
+- Componentized homepage sections in `app/components/`
+- `app/explorer/page.tsx` — client page that fetches posts from JSONPlaceholder with loading, error, empty states and client-side search
 
-Build the application:
+## Project structure
 
-```bash
-npm run build
+Top-level files
+- `package.json` — scripts & dependencies
+- `next.config.ts` — Next.js configuration (if present)
+- `tsconfig.json` — TypeScript config (if present)
+
+Key folders
+- `app/` — Next.js App Router
+  - `page.tsx` — Home page (imports components from `app/components/`)
+  - `layout.tsx` — Root HTML layout and global font imports
+  - `globals.css` — Global CSS (styles used by components)
+  - `explorer/` — Explorer route
+    - `page.tsx` — Client component that fetches public API data
+- `app/components/` — UI sections extracted from `page.tsx` (server components)
+  - `Navbar.tsx`
+  - `HeroSection.tsx`
+  - `Comparison.tsx`
+  - `Features.tsx`
+  - `FAQ.tsx`
+  - `Footer.tsx`
+- `public/` — Static assets (images, icons)
+
+## Explorer page
+
+- Route: `/explorer`
+- Fetches: `https://jsonplaceholder.typicode.com/posts` (first 50 items)
+- UI: shows loading indicator, error panel with retry, empty state, and a client-side search input to filter posts.
+
+## Notes and troubleshooting
+
+- If you see missing icon errors, install the icons package used in the project:
+
+```powershell
+npm install lucide-react
 ```
 
-Start the production server:
-
-```bash
-npm start
-```
-
-## Project Structure
-
-- `app/` - Next.js App Router pages and layouts
-  - `page.tsx` - Home page
-  - `explorer/page.tsx` - Explorer interface
-  - `layout.tsx` - Root layout
-- `public/` - Static assets
-
-
-## Known Trade-offs and Future Improvements
-
-### Trade-offs
-- **Latest Versions**: Using cutting-edge versions of Next.js (16) and React (19) may introduce occasional instability or breaking changes, but provides access to the latest features and performance improvements.
-- **Tailwind v4**: While powerful, the newer version may have fewer community resources compared to v3.
-
-### Future Improvements
-- Add comprehensive error handling and loading states
-- Implement data caching and state management (e.g., Zustand or Redux)
-- Add unit and integration tests with Jest and React Testing Library
-- Implement CI/CD pipeline for automated testing and deployment
-- Add internationalization (i18n) support
-- Optimize for mobile devices and accessibility
-- Add API routes for backend functionality
-- Implement user authentication and authorization
+- If styles don’t show, ensure `app/layout.tsx` imports `./globals.css`.
 
 ## Live URL
 

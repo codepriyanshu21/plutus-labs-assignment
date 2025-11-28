@@ -5,7 +5,7 @@ import { Plus, ChevronDown } from "lucide-react";
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggle = (i) => {
+  const toggle = (i:any) => {
     setOpenIndex(openIndex === i ? null : i);
   };
 
