@@ -64,7 +64,7 @@ npm start
   - `explorer/page.tsx` - Explorer interface
   - `layout.tsx` - Root layout
 - `public/` - Static assets
-- `components/` - Reusable React components (if any)
+
 
 ## Known Trade-offs and Future Improvements
 
